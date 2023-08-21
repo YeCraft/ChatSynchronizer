@@ -1,7 +1,7 @@
 package com.yecraft.chat.synchronizer.paper;
 
 import com.yecraft.chat.synchronizer.api.ChatSynchronizerAPI;
-import com.yecraft.chat.synchronizer.common.plugin.ChatSynchronizerPlugin;
+import com.yecraft.chat.synchronizer.common.plugin.AbstractChatSynchronizer;
 import com.yecraft.chat.synchronizer.common.service.APIServiceProvider;
 import com.yecraft.chat.synchronizer.common.service.ServiceProvider;
 import org.bukkit.Bukkit;
@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.UUID;
 
 
-public class ChatSynchronizerPaper extends ChatSynchronizerPlugin {
+public class ChatSynchronizerPaper extends AbstractChatSynchronizer {
 
     private final ServiceProvider<ChatSynchronizerAPI> provider;
 

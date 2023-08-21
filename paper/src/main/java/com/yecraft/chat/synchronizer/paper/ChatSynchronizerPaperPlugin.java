@@ -5,7 +5,7 @@ import com.yecraft.chat.synchronizer.common.command.CommandRegistry;
 import com.yecraft.chat.synchronizer.common.messaging.ComponentConsumer;
 import com.yecraft.chat.synchronizer.common.messaging.ComponentProducer;
 import com.yecraft.chat.synchronizer.common.plugin.ChatSynchronizer;
-import com.yecraft.chat.synchronizer.common.plugin.ChatSynchronizerPlugin;
+import com.yecraft.chat.synchronizer.common.plugin.AbstractChatSynchronizer;
 import com.yecraft.chat.synchronizer.common.service.ServiceProvider;
 import com.yecraft.chat.synchronizer.paper.commands.ChatSynchronizerCommands;
 import com.yecraft.configuration.Configuration;
@@ -20,7 +20,7 @@ import java.nio.file.Path;
 
 public class ChatSynchronizerPaperPlugin extends JavaPlugin implements ChatSynchronizer {
 
-    private final ChatSynchronizerPlugin chatSynchronizer;
+    private final AbstractChatSynchronizer chatSynchronizer;
 
     public ChatSynchronizerPaperPlugin() {
         this.chatSynchronizer = new ChatSynchronizerPaper(this);

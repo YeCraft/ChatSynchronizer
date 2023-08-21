@@ -7,12 +7,31 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>chat-synchronizer-paper</name>
-    <url>http://maven.apache.org</url>
+    <name>ChatSynchronizerPaper</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>server-test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <configuration>
+                            <outputDirectory>C:\Maks\YeCraft\Testing\Server1\plugins</outputDirectory>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
@@ -52,6 +71,10 @@
 
     <repositories>
         <repository>
+            <id>minecraft-libraries</id>
+            <url>https://libraries.minecraft.net</url>
+        </repository>
+        <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
@@ -59,14 +82,9 @@
             <id>papermc</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
-        <repository>
-            <id>minecraft-libraries</id>
-            <url>https://libraries.minecraft.net</url>
-        </repository>
     </repositories>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.mojang/brigadier -->
         <dependency>
             <groupId>com.mojang</groupId>
             <artifactId>brigadier</artifactId>
@@ -93,7 +111,7 @@
         <dependency>
             <groupId>com.yecraft</groupId>
             <artifactId>chat-synchronizer-common</artifactId>
-            <version>1.0-beta</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>

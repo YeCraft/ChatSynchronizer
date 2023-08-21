@@ -6,7 +6,7 @@
 
     <groupId>com.yecraft</groupId>
     <artifactId>chat-synchronizer-common</artifactId>
-    <version>1.0-beta</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <properties>
