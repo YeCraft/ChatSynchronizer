@@ -166,11 +166,11 @@ public abstract class AbstractChatSynchronizer implements ChatSynchronizer, Plug
 
         configuration.getString("kafka.consumer.group_id").ifPresentOrElse(str -> {
             consumerProperties.withProperty(ConsumerConfig.GROUP_ID_CONFIG, str);
-            logger.info(String.format("Kafka consumer enable auto commit is set to %s", str));
+            logger.info(String.format("Kafka consumer group id is set to %s", str));
         }, () -> {
             String groupID = "0";
             consumerProperties.withProperty(ConsumerConfig.GROUP_ID_CONFIG, groupID);
-            logger.info(String.format("Kafka consumer enable auto commit is set to %s", groupID));
+            logger.info(String.format("Kafka consumer group id is set to %s", groupID));
         });
 
         configuration.getString("kafka.consumer.auto_commit_interval_ms").ifPresentOrElse(str -> {

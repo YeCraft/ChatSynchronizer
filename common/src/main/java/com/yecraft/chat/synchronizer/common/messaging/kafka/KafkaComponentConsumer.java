@@ -5,11 +5,14 @@ import com.google.gson.GsonBuilder;
 import com.yecraft.chat.synchronizer.api.messenger.ComponentMessage;
 import com.yecraft.chat.synchronizer.common.messaging.ComponentConsumer;
 import com.yecraft.chat.synchronizer.common.messaging.message.ComponentMessageImpl;
+import com.yecraft.chat.synchronizer.common.plugin.ChatSynchronizer;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.json.JSONComponentSerializer;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -19,6 +22,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class KafkaComponentConsumer implements ComponentConsumer {
 
@@ -48,12 +52,12 @@ public class KafkaComponentConsumer implements ComponentConsumer {
     @Override
     public synchronized void consume(java.util.function.Consumer<ComponentMessage> consumerMessage) {
         service.execute(() -> {
-            while (true){
+            while (poll){
                 queue.add(consumer.poll(Duration.ofMillis(100)));
             }
         });
         service.execute(() -> {
-            while (true){
+            while (poll){
                 ConsumerRecords<String, String> records = queue.poll();
                 if (records != null){
                     if (!records.isEmpty()){
@@ -74,9 +78,21 @@ public class KafkaComponentConsumer implements ComponentConsumer {
     @Override
     public synchronized void close() {
         poll = false;
-        service.shutdown();
-        synchronized (consumer){
-            consumer.close();
+        shutdownAndAwaitTermination(service);
+        consumer.close();
+    }
+
+    void shutdownAndAwaitTermination(@NotNull ExecutorService pool) {
+        pool.shutdown();
+        try {
+            if (!pool.awaitTermination(1, TimeUnit.SECONDS)) {
+                pool.shutdownNow();
+                if (!pool.awaitTermination(1, TimeUnit.SECONDS))
+                    LoggerFactory.getLogger(ChatSynchronizer.class).error("Pool did not terminate");
+            }
+        } catch (InterruptedException ie) {
+            pool.shutdownNow();
+            Thread.currentThread().interrupt();
         }
     }
 

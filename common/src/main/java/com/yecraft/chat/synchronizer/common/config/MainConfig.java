@@ -27,10 +27,9 @@ public class MainConfig extends Configuration {
                                 "linger_ms", 1,
                                 "key_serializer_class", "org.apache.kafka.common.serialization.StringSerializer",
                                 "value_serializer_class", "org.apache.kafka.common.serialization.StringSerializer"
-                        ),
-                        "consumer", Map.of(
+                        ), "consumer", Map.of(
                                 "enable_auto_commit", "true",
-                                "consumer.group_id", "0",
+                                "group_id", "0",
                                 "auto_commit_interval_ms", "1000",
                                 "key_deserializer_class", "org.apache.kafka.common.serialization.StringDeserializer",
                                 "value_deserializer_class", "org.apache.kafka.common.serialization.StringDeserializer"
@@ -58,6 +57,7 @@ public class MainConfig extends Configuration {
         kafkaServers.add("Host your Kafka brokers");
         kafkaServers.add("It is advisable to specify all brokers, so that after disabling one, the plugin does not break");
         map.put("kafka.bootstrap-servers", kafkaServers);
+
 
         return map;
     }
