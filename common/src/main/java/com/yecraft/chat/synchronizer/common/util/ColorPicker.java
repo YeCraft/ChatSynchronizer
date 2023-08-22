@@ -1,0 +1,52 @@
+package com.yecraft.chat.synchronizer.common.util;
+
+import net.kyori.adventure.text.format.TextColor;
+
+public final class ColorPicker {
+    public static final TextColor WHITE = TextColor.fromHexString("#ffffff");
+    public static final TextColor PINK = TextColor.fromHexString("#ff33cc");
+    public static final TextColor YELLOW = TextColor.fromHexString("#FFFF00");
+    public static final TextColor BLACK = TextColor.fromHexString("#000000");
+    public static final TextColor NAVY = TextColor.fromHexString("#000080");
+    public static final TextColor DARK_BLUE = TextColor.fromHexString("#00008B");
+    public static final TextColor BLUE = TextColor.fromHexString("#0000FF");
+    public static final TextColor DARK_GREEN = TextColor.fromHexString("#006400");
+    public static final TextColor GREEN = TextColor.fromHexString("#008000");
+    public static final TextColor DEEP_SKY_BLUE = TextColor.fromHexString("#00BFFF");
+    public static final TextColor DARK_TURQUOISE = TextColor.fromHexString("#00CED1");
+    public static final TextColor MEDIUM_SPRING_GREEN = TextColor.fromHexString("#00FA9A");
+    public static final TextColor SPRING_GREEN = TextColor.fromHexString("#00FF7F");
+    public static final TextColor AQUA = TextColor.fromHexString("#00FFFF");
+    public static final TextColor GOLD = TextColor.fromHexString("#FFD700");
+    public static final TextColor ORANGE = TextColor.fromHexString("#FFA500");
+    public static final TextColor DARK_ORANGE = TextColor.fromHexString("#FF8C00");
+    public static final TextColor ORANGE_RED = TextColor.fromHexString("#FF4500");
+    public static final TextColor RED = TextColor.fromHexString("#FF0000");
+    public static final TextColor LIME = TextColor.fromHexString("#00FF00");
+    public static final TextColor GRAY = TextColor.fromHexString("#808080");
+    public static final TextColor GREEN_YELLOW = TextColor.fromHexString("#ADFF2F");
+    public static final TextColor LIGHT_GREEN = TextColor.fromHexString("#90EE90");
+    public static final TextColor LIGHT_SALMON = TextColor.fromHexString("#FFA07A");
+    public static final TextColor MEDIUM_PURPLE = TextColor.fromHexString("#9370DB");
+    public static final TextColor REBECCA_PURPLE = TextColor.fromHexString("#663399");
+    public static final TextColor MINT_CREAM = TextColor.fromHexString("#F5FFFA");
+    public static final TextColor PALE_GREEN = TextColor.fromHexString("#98FB98");
+    public static final TextColor PLUM = TextColor.fromHexString("#DDA0DD");
+    public static final TextColor SLATE_BLUE = TextColor.fromHexString("#6A5ACD");
+    public static final TextColor TOMATO = TextColor.fromHexString("#FF6347");
+    public static final TextColor VIOLET = TextColor.fromHexString("#EE82EE");
+    public static final TextColor WHITE_SMOKE = TextColor.fromHexString("#F5F5F5");
+    public static final TextColor TEAL = TextColor.fromHexString("#008080");
+    public static final TextColor ROYAL_BLUE = TextColor.fromHexString("#4169E1");
+    public static final TextColor PALE_TURQUOISE = TextColor.fromHexString("#AFEEEE");
+    public static final TextColor ORCHID = TextColor.fromHexString("#DA70D6");
+    public static final TextColor PEACH_PUFF = TextColor.fromHexString("#FFDAB9");
+    public static final TextColor LIGHT_PINK = TextColor.fromHexString("#FFB6C1");
+    public static final TextColor LIGHT_CYAN = TextColor.fromHexString("#E0FFFF");
+    public static final TextColor LAWN_GREEN = TextColor.fromHexString("#7CFC00");
+    public static final TextColor LAVENDER_BLUSH = TextColor.fromHexString("#FFF0F5");
+    public static final TextColor LAVENDER = TextColor.fromHexString("#E6E6FA");
+    public static final TextColor INDIGO = TextColor.fromHexString("#4B0082");
+    public static final TextColor FOREST_GREEN = TextColor.fromHexString("#228B22");
+    public static final TextColor CHARTREUSE = TextColor.fromHexString("#7FFF00");
+}

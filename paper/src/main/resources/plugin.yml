@@ -1,0 +1,5 @@
+name: ChatSynchronizer
+main: com.yecraft.chat.synchronizer.paper.ChatSynchronizerPaperPlugin
+version: 1.0
+api-version: 1.20
+author: Xemii16 (IStar)
