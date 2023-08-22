@@ -61,7 +61,7 @@
                     <relocations>
                         <relocation>
                             <pattern>dev.jorel.commandapi</pattern>
-                            <shadedPattern>com.yecraft.essentials.commandapi</shadedPattern>
+                            <shadedPattern>com.yecraft.chat.synchronizer.libraries.commandapi</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -111,7 +111,7 @@
         <dependency>
             <groupId>com.yecraft</groupId>
             <artifactId>chat-synchronizer-common</artifactId>
-            <version>1.0.1</version>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>

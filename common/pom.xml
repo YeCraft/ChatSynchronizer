@@ -6,7 +6,7 @@
 
     <groupId>com.yecraft</groupId>
     <artifactId>chat-synchronizer-common</artifactId>
-    <version>1.0.1</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -48,14 +48,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub yeCraft Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/yeCraft/ChatSynchronizer</url>
-        </repository>
-    </distributionManagement>
 
     <repositories>
         <repository>
